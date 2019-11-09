@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script 
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--<form action="http://localhost:3000/user/add" method="post" id="formMain">
+        number 1 : <input type="text" id="a" name="a"><br>
+        number 2 : <input type="text" id="b" name="b"><br>
+        <button type="submit" id="send">sum</button>
+    </form>-->
+    <form  id="formMainjQuery" action="http://localhost:3000/user/add" method="post">
+        number 1 : <input type="text" id="a" name="a"><br>
+        number 2 : <input type="text" id="b" name="b"><br>
+        <button type="submit" id="sendjQuery">sum</button>
+    </form>
+    <script>
+      $('#formMainjQuery').submit(function(e) { 
+          e.preventDefault();
+          $.ajax({
+              url: $(this).attr('action'),
+              data: $(this).serialize(),
+              type: 'post', 
+              success: function(data) {
+                  alert(data);
+              }
+          }).fail(function(jqXHR, textStatus, errorThrown) {
+            alert(textStatus); 
+        });
+      }); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "labs-2019-10-28",
+  "version": "1.0.0",
+  "description": "labs for 2019-10-28",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
